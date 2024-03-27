@@ -66,4 +66,12 @@
   .hide-image {
     display: none;
   }
+
+  .container-button-demo {
+    @apply flex-col items-center;
+  }
+
+  .button-demo {
+    @apply w-full;
+  }
 }

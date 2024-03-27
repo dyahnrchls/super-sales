@@ -26,10 +26,10 @@ function App() {
             <h2 className="text-primary text-xl pb-6">
               With a sleek design and an easy-to-navigate app.
             </h2>
-            <div className="flex flex-row gap-6 justify-center">
+            <div className="flex flex-row gap-6 justify-center container-button-demo">
               <button
                 type="button"
-                className="font-bold text-base text-primary py-2 px-[33px] rounded-full border-black bg-surface hover:bg-yellow-400 "
+                className="font-bold text-base text-primary py-2 px-[33px] rounded-full border-black bg-surface hover:bg-yellow-400 button-demo"
                 style={{
                   borderWidth: "1px 1px 6px 1px",
                 }}
