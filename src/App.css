@@ -14,18 +14,33 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  /* background-color: #282c34; */
+  /* min-height: 100vh; */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin); */
+  color: black;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.container {
+  @apply pb-4 mt-28;
+  /* background-color: #282c34; */
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+  /* margin-top: 87px; */
+  max-width: 100%;
+  /* padding-top: 64px; */
+  gap: 24px;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +50,20 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.cssanimation, .cssanimation span {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.cssanimation span { display: inline-block }
+
+.fadeInBottom { animation-name: fadeInBottom }
+@keyframes fadeInBottom {
+  from {
+      opacity: 0;
+      transform: translateY(100%);
+  }
+  to { opacity: 1 }
 }
