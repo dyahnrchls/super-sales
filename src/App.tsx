@@ -1,6 +1,8 @@
 import React from "react";
 import "./App.css";
 import { Header } from "./components/Header/Header";
+import { Avatar } from "./components/Avatar/Avatar";
+import { Star } from "./components/Star/Star";
 
 function App() {
   return (
@@ -10,81 +12,106 @@ function App() {
       </header>
       <div className="container">
         <div className="w-3/4 flex flex-col gap-6 relative">
-          {" "}
-          <p className="text-4xl">Field sales software for humans</p>
-          <p className="text-2xl">
-            Supersales enables your team to perform at the highest level, yet
-            stay human. With a sleek design and an easy-to-navigate app.
-          </p>
-          <div className="flex flex-row gap-6 justify-center">
-            <button
-              type="button"
-              className="font-bold text-black text-2xl py-2 px-[33px] rounded-full border-black bg-yellow-400 hover:bg-yellow-500 "
-              style={{
-                borderWidth: "1px 1px 6px 1px",
-              }}
-            >
-              Book a demo
-            </button>
-            <button type="button" className="flex items-center gap-1">
-              <img alt="play" src={require("./assets/images/play.png")} />
-              See how it works
-            </button>
+          <div className="flex flex-col">
+            <div className="absolute top-[-50px] left-[-10px]">
+              <Star />
+            </div>
+            <div className="absolute top-28 right-[-10px] hide-image">
+              <Star />
+            </div>
+            <div className="absolute top-2 right-[-70px]">
+              <Star />
+            </div>
+            <h1 className="font-bold text-primary text-4xl pb-6">
+              Field sales software for humans
+            </h1>
+            <h2 className="text-primary text-xl">
+              Supersales enables your team to perform at the highest level, yet
+              stay human.
+            </h2>
+            <h2 className="text-primary text-xl pb-6">
+              With a sleek design and an easy-to-navigate app.
+            </h2>
+            <div className="flex flex-row gap-6 justify-center">
+              <button
+                type="button"
+                className="font-bold text-base text-primary py-2 px-[33px] rounded-full border-black bg-surface hover:bg-yellow-400 "
+                style={{
+                  borderWidth: "1px 1px 6px 1px",
+                }}
+              >
+                Book a demo
+              </button>
+              <button
+                type="button"
+                className="flex items-center gap-1 text-base text-primary"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21ZM15.5 13.1962C16.1667 12.8113 16.1667 11.849 15.5 11.4641L11 8.86602C10.3333 8.48112 9.5 8.96225 9.5 9.73205L9.5 14.9282C9.5 15.698 10.3333 16.1791 11 15.7942L15.5 13.1962Z"
+                    fill="#414141"
+                  />
+                </svg>
+                See how it works
+              </button>
+            </div>
           </div>
-          <div className="bg-red-100 w-full relative">
+          <div className="w-full relative">
             <img
-              className="cssanimation fadeInBottom border rounded-2xl relative"
-              style={{ borderColor: "#414141" }}
+              className="cssanimation fadeInBottom border rounded-2xl relative border-border-dark"
               src={require("./assets/images/catalog.jpg")}
               alt="catalog"
             />
-            <img
-              className="cssanimation fadeInBottom border rounded-full absolute z-50 w-24"
-              style={{ borderColor: "#414141", top: "38%", left: -50 }}
+            <Avatar
+              alt="people1"
               src={require("./assets/images/people_1.png")}
-              alt="catalog"
+              bgTitle="bg-success"
+              title="Client"
+              top={"10%"}
+              right={-50}
             />
-            <img
-              className="cssanimation fadeInBottom border rounded-full w-24"
+            <Avatar
+              alt="people2"
               src={require("./assets/images/people_2.png")}
-              style={{ borderColor: "#414141" }}
-              alt="catalog"
+              bgTitle="bg-info"
+              title="Sales"
+              top={"50%"}
+              left={-50}
+              customClass="hide-image"
             />
-            <img
-              className="cssanimation fadeInBottom border rounded-full w-24"
-              style={{ borderColor: "#414141" }}
+            <Avatar
+              alt="people3"
               src={require("./assets/images/people_3.png")}
-              alt="catalog"
+              bgTitle="bg-warning"
+              title="Sales Manager"
+              top={"70%"}
+              right={-50}
+              widthTitle="w-40"
+              customClass="hide-image"
             />
           </div>
           <p>Trusted by leading companies</p>
         </div>
-        <div className="flex gap-8 items-center">
-          <img
-            alt="company_1"
-            src={require("./assets/images/company_1.png")}
-            className="h-16"
-          />
-          <img
-            alt="company_2"
-            src={require("./assets/images/company_2.png")}
-            className="h-16"
-          />
-          <img
-            alt="company_3"
-            src={require("./assets/images/company_3.png")}
-            className="h-16"
-          />
-          <img
-            alt="company_4"
-            src={require("./assets/images/company_4.png")}
-            className="h-16"
-          />
-          <img
-            alt="company_5"
-            src={require("./assets/images/company_5.png")}
-            className="h-16"
-          />
+        <div className="overflow-hidden">
+          <div className="flex banner items-center no-scroll">
+            {/* Repeat images to ensure endless scrolling */}
+            {[...Array(5)].map((_, index) => (
+              <img
+                key={index}
+                alt={`company_${index + 1}`}
+                src={require(`./assets/images/company_${index + 1}.png`)}
+                className="h-16"
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

@@ -29,13 +29,12 @@
 }
 
 .container {
-  @apply pb-4 mt-28;
+  @apply pb-4 mt-36;
   /* background-color: #282c34; */
   /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   /* margin-top: 87px; */
   max-width: 100%;
@@ -52,18 +51,93 @@
   }
 }
 
-.cssanimation, .cssanimation span {
+.cssanimation,
+.cssanimation span {
   animation-duration: 1s;
   animation-fill-mode: both;
 }
 
-.cssanimation span { display: inline-block }
+.cssanimation span {
+  display: inline-block;
+}
 
-.fadeInBottom { animation-name: fadeInBottom }
+.fadeInBottom {
+  animation-name: fadeInBottom;
+}
 @keyframes fadeInBottom {
   from {
-      opacity: 0;
-      transform: translateY(100%);
+    opacity: 0;
+    transform: translateY(100%);
   }
-  to { opacity: 1 }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes growAndRotate {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.stars {
+  display: flex;
+}
+
+.star {
+  animation: growAndRotate 5s infinite ease-in-out;
+}
+
+.star:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.star:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.star:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+.star:nth-child(5) {
+  animation-delay: 2s;
+}
+
+
+/* Styles for the banner container */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* Styles for the flex container */
+.banner {
+  animation: scrollRightToLeft 20s linear infinite;
+  white-space: nowrap; /* Ensure images stay in a single line */
+}
+
+/* Animation to move the flex container from right to left */
+@keyframes scrollRightToLeft {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Media query to disable animation when window width is above 1024px */
+@media (min-width: 950px) {
+  .no-scroll {
+    animation: none;
+  }
+}
+
+/* Media query to disable animation when window width is above 1024px */
+@media (max-width: 950px) {
+  .hide-image {
+    display: none;
+  }
 }
