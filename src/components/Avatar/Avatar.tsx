@@ -1,3 +1,5 @@
+import "./Avatar.css";
+
 interface AvatarProps {
   src: string;
   alt: string;
@@ -22,19 +24,16 @@ export const Avatar = ({
   customClass,
 }: AvatarProps) => {
   return (
-    <div
-      className={`absolute z-50 w-24 flex items-center flex-col ${customClass}`}
-      style={{ top, right, left }}
-    >
+    <div className={`avatar-container ${customClass}`} style={{ top, right, left }}>
       <img
-        className="cssanimation fadeInBottom border rounded-full z-50 border-border-dark border-b-8"
+        className="cssanimation fadeInBottom avatar-img"
         src={src}
         alt={alt}
       />
       <div
         className={`cssanimation fadeInBottom ${
           widthTitle ?? "w-20"
-        } py-2 text-white text-xl text-center rounded-full font-bold absolute z-[60] ${bgTitle}`}
+        } avatar-title ${bgTitle}`}
         style={{ bottom: -20 }}
       >
         {title}

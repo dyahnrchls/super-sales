@@ -1,54 +1,13 @@
-.App {
+.app {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  /* background-color: #282c34; */
-  /* min-height: 100vh; */
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin); */
+.app-header {
   color: black;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 .container {
-  @apply pb-4 mt-36;
-  /* background-color: #282c34; */
-  /* min-height: 100vh; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: calc(10px + 2vmin);
-  /* margin-top: 87px; */
-  max-width: 100%;
-  /* padding-top: 64px; */
-  gap: 24px;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  @apply pb-4 mt-36 gap-6 flex flex-col items-center max-w-full;
 }
 
 .cssanimation,
@@ -74,43 +33,6 @@
   }
 }
 
-@keyframes growAndRotate {
-  0% {
-    transform: scale(1) rotate(0deg);
-  }
-  50% {
-    transform: scale(1.1) rotate(5deg);
-  }
-  100% {
-    transform: scale(1) rotate(0deg);
-  }
-}
-
-.stars {
-  display: flex;
-}
-
-.star {
-  animation: growAndRotate 5s infinite ease-in-out;
-}
-
-.star:nth-child(2) {
-  animation-delay: 0.5s;
-}
-
-.star:nth-child(3) {
-  animation-delay: 1s;
-}
-
-.star:nth-child(4) {
-  animation-delay: 1.5s;
-}
-
-.star:nth-child(5) {
-  animation-delay: 2s;
-}
-
-
 /* Styles for the banner container */
 .overflow-hidden {
   overflow: hidden;
@@ -124,8 +46,12 @@
 
 /* Animation to move the flex container from right to left */
 @keyframes scrollRightToLeft {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 /* Media query to disable animation when window width is above 1024px */

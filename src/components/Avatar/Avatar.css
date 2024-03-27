@@ -1,0 +1,11 @@
+.avatar-container {
+  @apply absolute z-50 w-24 flex items-center flex-col;
+}
+
+.avatar-img {
+  @apply border rounded-full z-50 border-border-dark border-b-8;
+}
+
+.avatar-title {
+  @apply py-2 text-white text-xl text-center rounded-full font-bold absolute z-[60];
+}

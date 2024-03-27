@@ -6,22 +6,16 @@ import { Star } from "./components/Star/Star";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="app">
+      <header className="app-header">
         <Header />
       </header>
       <div className="container">
         <div className="w-3/4 flex flex-col gap-6 relative">
           <div className="flex flex-col">
-            <div className="absolute top-[-50px] left-[-10px]">
-              <Star />
-            </div>
-            <div className="absolute top-28 right-[-10px] hide-image">
-              <Star />
-            </div>
-            <div className="absolute top-2 right-[-70px]">
-              <Star />
-            </div>
+            <Star top={-50} left={-10} />
+            <Star top={100} right={-10} hideImage />
+            <Star top={2} right={-70} />
             <h1 className="font-bold text-primary text-4xl pb-6">
               Field sales software for humans
             </h1>
@@ -98,11 +92,10 @@ function App() {
               customClass="hide-image"
             />
           </div>
-          <p>Trusted by leading companies</p>
+          <p className="text-2xl text-primary">Trusted by leading companies</p>
         </div>
         <div className="overflow-hidden">
           <div className="flex banner items-center no-scroll">
-            {/* Repeat images to ensure endless scrolling */}
             {[...Array(5)].map((_, index) => (
               <img
                 key={index}

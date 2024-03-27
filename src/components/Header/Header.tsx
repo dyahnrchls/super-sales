@@ -49,7 +49,7 @@ export const Header = () => {
             <li>
               <a
                 href="/"
-                className="font-bold text-black text-base border-border-dark px-6 py-2 rounded-full"
+                className="header-text border-border-dark px-6 py-2 rounded-full"
                 style={{
                   borderWidth: "1px 1px 6px 1px",
                 }}
@@ -59,22 +59,22 @@ export const Header = () => {
               </a>
             </li>
             <li>
-              <a href="/" className="font-bold text-black text-base">
+              <a href="/" className="header-text">
                 Features
               </a>
             </li>
             <li>
-              <a href="/" className="font-bold text-black text-base">
+              <a href="/" className="header-text">
                 About
               </a>
             </li>
             <li>
-              <a href="/" className="font-bold text-black text-base">
+              <a href="/" className="header-text">
                 Pricing
               </a>
             </li>
             <li>
-              <a href="/" className="font-bold text-black text-base">
+              <a href="/" className="header-text">
                 Contact
               </a>
             </li>
