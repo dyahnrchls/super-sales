@@ -64,7 +64,7 @@
 /* Media query to disable animation when window width is above 1024px */
 @media (max-width: 950px) {
   .hide-image {
-    display: none;
+    display: none !important;
   }
 
   .container-button-demo {
